@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Facebook Post Scraper",
+    "version": "1.0",
+    "permissions": ["activeTab", "tabs", "storage", "scripting"],
+    "background": {
+        "service_worker": "background.js"
+      },
+    "content_scripts": [
+        {
+            "matches": ["*://*.facebook.com/*"],
+            "js": ["contentScript.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html",
+        "default_title": "Facebook Post Scraper"
+    }
+}
